@@ -19,6 +19,7 @@ logs/
 # notebook checkpoints
 .ipynb_checkpoints/
 **/.ipynb_checkpoints/
+pyproject.toml
 
 # Python
 __pycache__/
