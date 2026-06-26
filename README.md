@@ -283,36 +283,10 @@ no GPU
 - Keep optional raster files in `data/raster/`.
 - Generated validation/test outputs are written under `outputs/`.
 
-## Troubleshooting
-
-### Missing parquet engine
-
-```text
-ImportError: Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'
-```
-
-Install pyarrow:
-
-```bash
-python -m pip install pyarrow
-```
-
-### Jupyter cannot find `geo_env`
-
-```bash
-python -m ipykernel install --user --name geo_env --display-name "Python (geo_env)"
-```
-
-### WindowsPath error on Linux
-
-A model saved on Windows may contain `WindowsPath` objects. The current loader patches this automatically before `joblib.load`.
-
 ## Citation
 
 If you use this package, cite the associated dissertation chapter/manuscript when available.
 
-Temporary citation:
-
 ```text
-Liu, Y. Large-felid probabilistic trajectory reconstruction: a pretrained motif-retrieval and probabilistic time-geographic framework. Dissertation/manuscript in preparation.
+Liu Y., Dodge S., Wilmers C.C. A Context-Sensitive Probabilistic Time-Geographic Approach to Interpolating Sparse Carnivore Trajectories. Manuscript in preparation
 ```
