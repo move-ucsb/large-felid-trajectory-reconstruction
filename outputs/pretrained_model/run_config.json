@@ -1,0 +1,292 @@
+{
+  "config": {
+    "coarse_intervals_min": [
+      60,
+      120,
+      240
+    ],
+    "context_demographic_weight": 0.08,
+    "context_direction_weight": 0.25,
+    "context_efficiency_weight": 0.3,
+    "context_environment_weight": 0.22,
+    "context_max_preferred_path_ratio": 2.25,
+    "context_retrieval_multiplier": 8,
+    "context_source_shape_weight": 0.25,
+    "context_temporal_weight": 0.12,
+    "dataset_penalty": 0.05,
+    "descriptor_features": [
+      "n_points_scaled",
+      "log_coarse_dt",
+      "log_fine_dt",
+      "log_displacement",
+      "log_base_step",
+      "endpoint_directness_proxy",
+      "prev_step_log_ratio",
+      "next_step_log_ratio",
+      "has_prev",
+      "has_next",
+      "incoming_alignment",
+      "outgoing_alignment",
+      "incoming_lateral_abs",
+      "outgoing_lateral_abs",
+      "start_hour_sin",
+      "start_hour_cos",
+      "mid_hour_sin",
+      "mid_hour_cos",
+      "month_sin",
+      "month_cos",
+      "dayofyear_sin",
+      "dayofyear_cos",
+      "context_sex_female",
+      "context_sex_male",
+      "context_age_adult",
+      "context_age_subadult"
+    ],
+    "descriptor_weight": 0.85,
+    "evaluate_environmental_exposure": true,
+    "fine_interval_min": null,
+    "include_direct_identity_motif": true,
+    "include_heading_candidate": false,
+    "include_heading_continuity_motif": true,
+    "include_linear_candidate": false,
+    "include_mirror": true,
+    "lateral_scales": [
+      0.75,
+      1.0,
+      1.2
+    ],
+    "max_animals_per_dataset_taxon_setting": 3,
+    "max_candidates_per_task": 45,
+    "max_motifs": 25000,
+    "max_path_ratio": 3.0,
+    "max_step_violation_fraction": 0.2,
+    "max_tasks_per_animal_setting": 30,
+    "max_tasks_per_dataset_taxon_setting": 60,
+    "min_points_per_animal": 5,
+    "n_jobs": 0,
+    "output_dir": "C:\\Users\\Yifei\\Documents\\Python code\\carnivore_reconstruction\\outputs\\pretrained_model",
+    "output_top_k": 5,
+    "parallel_threshold_tasks": 2,
+    "random_seed": 42,
+    "representative_top_k": 20,
+    "retrieve_per_task": 20,
+    "save_candidate_paths": false,
+    "softmax_beta": 0.5,
+    "split_strategy": "global_hash",
+    "step_capacity_min_multiplier": 1.1,
+    "step_capacity_quantile": 0.9,
+    "stride_fraction": 1.0,
+    "task_sampling_mode": "legacy_comparable",
+    "taxon_penalty": 0.12,
+    "train_fraction": 0.7,
+    "use_contextual_retrieval": true,
+    "use_environmental_covariates": true,
+    "validation_fraction": 0.15
+  },
+  "datasets": [
+    {
+      "animal_task_settings": {},
+      "dataset": "SantaCruz_puma",
+      "env_cols": [
+        "Dist_housing",
+        "Dist_stream",
+        "Elevation",
+        "Slope"
+      ],
+      "epsg": 32610,
+      "extra_paths": [],
+      "id_col": "pumaID",
+      "lat_col": null,
+      "lon_col": null,
+      "metadata_age_col": null,
+      "metadata_code_col": null,
+      "metadata_id_col": null,
+      "metadata_path": null,
+      "metadata_sex_col": null,
+      "metadata_species_col": null,
+      "path": "C:\\Users\\Yifei\\Documents\\Python code\\carnivore_reconstruction\\data\\raw\\5min_data_20251030_env.csv",
+      "raster_dir": "C:\\Users\\Yifei\\Documents\\Python code\\carnivore_reconstruction\\data\\rasters\\puma",
+      "raster_epsg": 32610,
+      "raster_paths": {
+        "Dist_housing": "C:\\Users\\Yifei\\Documents\\Python code\\carnivore_reconstruction\\data\\rasters\\puma\\Housing_1m_MATCH_Housing_clipped.tif",
+        "Dist_stream": "C:\\Users\\Yifei\\Documents\\Python code\\carnivore_reconstruction\\data\\rasters\\puma\\Stream_1m_MATCH_Housing_clipped.tif",
+        "Elevation": "C:\\Users\\Yifei\\Documents\\Python code\\carnivore_reconstruction\\data\\rasters\\puma\\Elevation_1m_MATCH_Housing_clipped.tif",
+        "Slope": "C:\\Users\\Yifei\\Documents\\Python code\\carnivore_reconstruction\\data\\rasters\\puma\\Slope_1m_MATCH_Housing_clipped.tif"
+      },
+      "task_settings": [
+        {
+          "coarse_dt_min": 30,
+          "fine_dt_min": 5,
+          "setting_name": "puma_30_to_5"
+        },
+        {
+          "coarse_dt_min": 60,
+          "fine_dt_min": 5,
+          "setting_name": "puma_60_to_5"
+        },
+        {
+          "coarse_dt_min": 120,
+          "fine_dt_min": 5,
+          "setting_name": "puma_120_to_5"
+        },
+        {
+          "coarse_dt_min": 240,
+          "fine_dt_min": 5,
+          "setting_name": "puma_240_to_5"
+        }
+      ],
+      "taxon": "puma",
+      "taxon_by_animal_id": {},
+      "time_col": "UTC_date_time",
+      "x_col": "x",
+      "y_col": "y"
+    },
+    {
+      "animal_task_settings": {
+        "229011": [
+          {
+            "coarse_dt_min": 60,
+            "fine_dt_min": 15,
+            "setting_name": "tigerleopard_60_to_15"
+          },
+          {
+            "coarse_dt_min": 240,
+            "fine_dt_min": 60,
+            "setting_name": "tigerleopard_240_to_60"
+          }
+        ],
+        "31898": [
+          {
+            "coarse_dt_min": 60,
+            "fine_dt_min": 15,
+            "setting_name": "tigerleopard_60_to_15"
+          },
+          {
+            "coarse_dt_min": 240,
+            "fine_dt_min": 60,
+            "setting_name": "tigerleopard_240_to_60"
+          }
+        ],
+        "31899": [
+          {
+            "coarse_dt_min": 60,
+            "fine_dt_min": 15,
+            "setting_name": "tigerleopard_60_to_15"
+          },
+          {
+            "coarse_dt_min": 240,
+            "fine_dt_min": 60,
+            "setting_name": "tigerleopard_240_to_60"
+          }
+        ]
+      },
+      "dataset": "Thailand_tiger_leopard",
+      "env_cols": [
+        "slope",
+        "temperature"
+      ],
+      "epsg": 32647,
+      "extra_paths": [],
+      "id_col": "idcollar",
+      "lat_col": "latitude",
+      "lon_col": "longitude",
+      "metadata_age_col": null,
+      "metadata_code_col": null,
+      "metadata_id_col": null,
+      "metadata_path": "C:\\Users\\Yifei\\Documents\\Python code\\carnivore_reconstruction\\data\\raw\\List_ALL_TIGERS.csv",
+      "metadata_sex_col": null,
+      "metadata_species_col": null,
+      "path": "C:\\Users\\Yifei\\Documents\\Python code\\carnivore_reconstruction\\data\\raw\\Alltiger_220202.csv",
+      "raster_dir": "C:\\Users\\Yifei\\Documents\\Python code\\carnivore_reconstruction\\data\\rasters\\thailand",
+      "raster_epsg": 32647,
+      "raster_paths": {
+        "bt": "C:\\Users\\Yifei\\Documents\\Python code\\carnivore_reconstruction\\data\\rasters\\thailand\\bt1kmPredictiveMap_UTM47N.tif",
+        "gr": "C:\\Users\\Yifei\\Documents\\Python code\\carnivore_reconstruction\\data\\rasters\\thailand\\gr1kmPredictiveMap_UTM47N.tif",
+        "sb": "C:\\Users\\Yifei\\Documents\\Python code\\carnivore_reconstruction\\data\\rasters\\thailand\\sb1kmPredictiveMap_UTM47N.tif",
+        "slope": "C:\\Users\\Yifei\\Documents\\Python code\\carnivore_reconstruction\\data\\rasters\\thailand\\slope_wefcom_UTM47N.tif"
+      },
+      "task_settings": [
+        {
+          "coarse_dt_min": 240,
+          "fine_dt_min": 60,
+          "setting_name": "tigerleopard_240_to_60"
+        }
+      ],
+      "taxon": "tiger",
+      "taxon_by_animal_id": {
+        "31898": "leopard",
+        "31899": "leopard",
+        "37821": "leopard",
+        "37822": "leopard",
+        "37823": "leopard"
+      },
+      "time_col": "Time_LMT",
+      "x_col": null,
+      "y_col": null
+    },
+    {
+      "animal_task_settings": {},
+      "dataset": "Olympic_cougar",
+      "env_cols": [],
+      "epsg": 32610,
+      "extra_paths": [],
+      "id_col": "name",
+      "lat_col": null,
+      "lon_col": null,
+      "metadata_age_col": null,
+      "metadata_code_col": null,
+      "metadata_id_col": null,
+      "metadata_path": "C:\\Users\\Yifei\\Documents\\Python code\\carnivore_reconstruction\\data\\raw\\Bobcat_cougar_metadata_revised.csv",
+      "metadata_sex_col": null,
+      "metadata_species_col": null,
+      "path": "C:\\Users\\Yifei\\Documents\\Python code\\carnivore_reconstruction\\data\\raw\\OlympicPeninsula_Cougar_n10.csv",
+      "raster_dir": null,
+      "raster_epsg": 32610,
+      "raster_paths": {},
+      "task_settings": [
+        {
+          "coarse_dt_min": 240,
+          "fine_dt_min": 60,
+          "setting_name": "cougar_240_to_60"
+        }
+      ],
+      "taxon": "cougar",
+      "taxon_by_animal_id": {},
+      "time_col": "date_time",
+      "x_col": "x",
+      "y_col": "y"
+    },
+    {
+      "animal_task_settings": {},
+      "dataset": "Olympic_bobcat",
+      "env_cols": [],
+      "epsg": 32610,
+      "extra_paths": [],
+      "id_col": "name",
+      "lat_col": null,
+      "lon_col": null,
+      "metadata_age_col": null,
+      "metadata_code_col": null,
+      "metadata_id_col": null,
+      "metadata_path": "C:\\Users\\Yifei\\Documents\\Python code\\carnivore_reconstruction\\data\\raw\\Bobcat_cougar_metadata_revised.csv",
+      "metadata_sex_col": null,
+      "metadata_species_col": null,
+      "path": "C:\\Users\\Yifei\\Documents\\Python code\\carnivore_reconstruction\\data\\raw\\OlympicPeninsula_Bobcat_n8.csv",
+      "raster_dir": null,
+      "raster_epsg": 32610,
+      "raster_paths": {},
+      "task_settings": [
+        {
+          "coarse_dt_min": 240,
+          "fine_dt_min": 60,
+          "setting_name": "bobcat_240_to_60"
+        }
+      ],
+      "taxon": "bobcat",
+      "taxon_by_animal_id": {},
+      "time_col": "date_time",
+      "x_col": "x",
+      "y_col": "y"
+    }
+  ]
+}
